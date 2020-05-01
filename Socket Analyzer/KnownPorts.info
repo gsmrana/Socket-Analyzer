@@ -1,0 +1,37 @@
+﻿9,UDP,Wake On LAN
+21,TCP,FTP Data
+21,TCP,FTP Control
+22,TCP,SSH
+23,TCP,Telnet
+25,TCP,SMTP
+53,BOTH,DNS
+80,TCP,HTTP
+135,BOTH,Microsoft EPMAP/RPC
+137,BOTH,NetBIOS Name
+138,UDP,NetBIOS Datagram
+139,TCP,NetBIOS Session
+143,TCP,Internet Message Access Protocol (IMAP)
+161,UDP,Simple Network Management Protocol (SNMP)
+179,TCP,Border Gateway Protocol (BGP)
+194,TCP,Internet Relay Chat (IRC)
+201,BOTH,AppleTalk Routing Maintenance
+443,TCP,HTTP over TLS/SSL (HTTPS)
+445,BOTH,Microsoft Active Directory/SMB
+465,TCP,SMTP over TLS/SSL (SMTPS)
+530,BOTH,Remote procedure call (RPC)
+554,BOTH,Real Time Streaming Protocol (RTSP)
+587,TCP,Email Submission (SMTP)
+912,TCP,VMware
+1026,TCP,Windows Messenger
+1433,BOTH,Microsoft SQL Server (MSSQL)
+1433,BOTH,Microsoft SQL Monitor (MSSQL)
+1512,BOTH,Microsoft Windows Internet Name Service (WINS)
+1723,TCP,Point-to-Point Tunneling Protocol (PPTP)
+3306,TCP,MySQL Database
+3389,BOTH,Microsoft Remote Desktop (RDP) 
+8080,TCP,Alt HTTP
+5357,TCP,Web Service of Device (WSDAPI)
+5800,TCP,VNC Mirror (HTTP)
+5900,TCP,VNC Mirror (RFB)
+5901,TCP,VNC Virtual 1
+5902,TCP,VNC Virtual 2
