@@ -814,7 +814,7 @@ namespace Socket_Analyzer
             try
             {
                 var host = GetInputTextFromToolStrip();
-                AppendEventLog(string.Format("Pinging Host... {0}", host), Color.DarkGreen);
+                AppendEventLog(string.Format("Pinging host... {0}", host), Color.DarkGreen);
                 Task.Run(() =>
                 {
                     try
@@ -834,7 +834,36 @@ namespace Socket_Analyzer
                             AppendEventLog(sb.ToString(), Color.Blue);
                             Thread.Sleep(100);
                         }
-                        AppendEventLog("", Color.Blue);
+                        AppendEventLog("Ping completed!" + "\n", Color.DarkGreen);
+                    }
+                    catch (Exception ex)
+                    {
+                        AppendEventLog("Exception: " + ex.Message, Color.Magenta);
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                AppendEventLog("Exception: " + ex.Message, Color.Magenta);
+            }
+        }
+
+        private void ToolStripButtonTracert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var host = GetInputTextFromToolStrip();
+                AppendEventLog(string.Format("Tracert to host... {0}", host), Color.DarkGreen);
+                Task.Run(() =>
+                {
+                    try
+                    {
+                        var count = 0;
+                        foreach (var item in ServerInfo.GetTraceRoute(host))
+                        {
+                            AppendEventLog(string.Format("{0:00} - {1}", ++count, item), Color.Blue);
+                        }
+                        AppendEventLog("Trace completed!" + "\n", Color.DarkGreen);
                     }
                     catch (Exception ex)
                     {
@@ -858,10 +887,12 @@ namespace Socket_Analyzer
                 {
                     try
                     {
-                        var sb = new StringBuilder();
+                        var count = 0;
                         foreach (var item in ServerInfo.ResolveDns(host))
-                            sb.AppendLine(item.ToString());
-                        AppendEventLog(sb.ToString(), Color.Blue);
+                        {
+                            AppendEventLog(string.Format("{0:00} - {1}", ++count, item), Color.Blue);
+                        }
+                        AppendEventLog("DNS resolve completed!" + "\n", Color.DarkGreen);
                     }
                     catch (Exception ex)
                     {
@@ -886,7 +917,7 @@ namespace Socket_Analyzer
                     try
                     {
                         var hostname = ServerInfo.ResolveHostname(IPAddress.Parse(hostip));
-                        AppendEventLog(hostname + "\r", Color.Blue);
+                        AppendEventLog(hostname + "\n", Color.Blue);
                     }
                     catch (Exception ex)
                     {
@@ -912,7 +943,7 @@ namespace Socket_Analyzer
                     try
                     {
                         var ntpDateTime = ServerInfo.GetDatetimeFromNTP(host, port);
-                        AppendEventLog("NTP Datetime: " + ntpDateTime + "\r", Color.Blue);
+                        AppendEventLog("NTP Datetime: " + ntpDateTime + "\n", Color.Blue);
                     }
                     catch (Exception ex)
                     {

@@ -116,6 +116,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripComboBoxHostName = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripButtonPing = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonTracert = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonResolve = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonReverseDns = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonNtpRequest = new System.Windows.Forms.ToolStripButton();
@@ -898,12 +899,13 @@
             this.toolStripSeparator4,
             this.toolStripComboBoxHostName,
             this.toolStripButtonPing,
+            this.toolStripButtonTracert,
+            this.toolStripButtonNtpRequest,
             this.toolStripButtonResolve,
             this.toolStripButtonReverseDns,
-            this.toolStripButtonNtpRequest,
             this.toolStripSeparator2,
-            this.toolStripButtonCopyText,
             this.toolStripButtonClear,
+            this.toolStripButtonCopyText,
             this.aboutToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 23);
             this.toolStrip1.Name = "toolStrip1";
@@ -960,13 +962,22 @@
             this.toolStripButtonPing.Text = "Ping";
             this.toolStripButtonPing.Click += new System.EventHandler(this.ToolStripButtonPing_Click);
             // 
+            // toolStripButtonTracert
+            // 
+            this.toolStripButtonTracert.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonTracert.Image")));
+            this.toolStripButtonTracert.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonTracert.Name = "toolStripButtonTracert";
+            this.toolStripButtonTracert.Size = new System.Drawing.Size(62, 22);
+            this.toolStripButtonTracert.Text = "Tracert";
+            this.toolStripButtonTracert.Click += new System.EventHandler(this.ToolStripButtonTracert_Click);
+            // 
             // toolStripButtonResolve
             // 
             this.toolStripButtonResolve.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonResolve.Image")));
             this.toolStripButtonResolve.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonResolve.Name = "toolStripButtonResolve";
-            this.toolStripButtonResolve.Size = new System.Drawing.Size(50, 22);
-            this.toolStripButtonResolve.Text = "DNS";
+            this.toolStripButtonResolve.Size = new System.Drawing.Size(67, 22);
+            this.toolStripButtonResolve.Text = "Resolve";
             this.toolStripButtonResolve.Click += new System.EventHandler(this.ToolStripButtonResolve_Click);
             // 
             // toolStripButtonReverseDns
@@ -1006,8 +1017,9 @@
             this.toolStripButtonClear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonClear.Image")));
             this.toolStripButtonClear.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonClear.Name = "toolStripButtonClear";
-            this.toolStripButtonClear.Size = new System.Drawing.Size(77, 22);
-            this.toolStripButtonClear.Text = "Clear Log";
+            this.toolStripButtonClear.Size = new System.Drawing.Size(78, 22);
+            this.toolStripButtonClear.Text = "Clear Text";
+            this.toolStripButtonClear.ToolTipText = "Clear Text";
             this.toolStripButtonClear.Click += new System.EventHandler(this.ToolStripButtonClear_Click);
             // 
             // aboutToolStripButton
@@ -1159,6 +1171,7 @@
         private System.Windows.Forms.ToolStripStatusLabel tbScStatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripLabelPercent;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonTracert;
     }
 }
 
