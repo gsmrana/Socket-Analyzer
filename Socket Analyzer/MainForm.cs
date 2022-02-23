@@ -861,7 +861,10 @@ namespace Socket_Analyzer
                         var count = 0;
                         foreach (var item in ServerInfo.GetTraceRoute(host))
                         {
-                            AppendEventLog(string.Format("{0:00} - {1}", ++count, item), Color.Blue);
+                            var ip = (item.Address != null) ? item.Address.ToString() : "";
+                            var info = (item.Status != IPStatus.TtlExpired) ? item.Status.ToString() : "";
+                            var sep = (ip != "" && info != "") ? " -> " : "";
+                            AppendEventLog(string.Format("{0:00} - {1}{2}{3}", ++count, ip, sep, info), Color.Blue);
                         }
                         AppendEventLog("Trace completed!" + "\n", Color.DarkGreen);
                     }
